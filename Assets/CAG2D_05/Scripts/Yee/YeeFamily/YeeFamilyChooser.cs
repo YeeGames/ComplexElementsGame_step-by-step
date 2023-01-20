@@ -1,7 +1,4 @@
-// using CAG2D_05;
 
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CAG2D_05
@@ -23,7 +20,7 @@ namespace CAG2D_05
             switch (yeeFamilyEnum)
             {
                 case YeeFamilyEnum.Yee2E:
-                    // yeeRule = gameObject.AddComponent<Yee2ERule>(); //FIXME Yee3ERule to Yee2ERule
+                    yeeRule = gameObject.AddComponent<Yee2ERule>();
                     break;
                 case YeeFamilyEnum.Yee3E:
                     yeeRule = gameObject.AddComponent<Yee3ERule>();

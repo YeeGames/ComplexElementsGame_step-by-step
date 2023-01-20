@@ -51,7 +51,7 @@ namespace CAG2D_05
         /// <summary>
         /// 个体设置项
         /// </summary>
-        [SerializeField] public AgentSettings aset;
+        [HideInInspector] public AgentSettings aset;
 
         /// <summary>
         /// Game设置项
@@ -190,7 +190,7 @@ namespace CAG2D_05
             this.ruleCircleCollider2D.sharedMaterial = this.physicsMaterial2D;
 
             /// 设置规则圆圈碰撞器之范围之半径
-            this.ruleCircleCollider2D.radius = this.inter.yeeRule.ruleCircleCollider2DRadius;
+            this.ruleCircleCollider2D.radius = this.inter.yeeRule.ruleCircleColliderRadius;
             this.agentRuleEffectorAreaSpriteRenderer.transform.localScale = new Vector3(this.ruleCircleCollider2D.radius * 2, this.ruleCircleCollider2D.radius * 2, 1);
         }
 

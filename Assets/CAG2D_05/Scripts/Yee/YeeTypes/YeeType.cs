@@ -6,13 +6,28 @@ namespace CAG2D_05
 {
     public class YeeType
     {
-        [ReadOnly] [SerializeField] public int NumElement;
-        [ReadOnly] [SerializeField] public Color[] Colors;
-        [ReadOnly] [SerializeField] public string[] YeeTypes;
-        [ReadOnly] [SerializeField] public string[] YeeInterTypes;
+        /// <summary>
+        /// 元素个数
+        /// </summary>
+        [ReadOnly] [SerializeField] internal int NumElement;
 
         /// <summary>
-        /// 起始YeeType向量
+        /// 元素颜色
+        /// </summary>
+        [ReadOnly] [SerializeField] internal Color[] Colors;
+
+        /// <summary>
+        /// 元素类型
+        /// </summary>
+        [ReadOnly] [SerializeField] internal string[] YeeTypes;
+
+        /// <summary>
+        /// 元素交互类型
+        /// </summary>
+        [ReadOnly] [SerializeField] internal string[] YeeInterTypes;
+
+        /// <summary>
+        /// 起始Yee类型数组
         /// </summary>
         internal string[] FromYeeTypeArray = new string[]
         {
@@ -20,67 +35,17 @@ namespace CAG2D_05
 
 
         /// <summary>
-        /// 目标YeeType向量
+        /// 目标Yee类型数组
         /// </summary>
         internal string[] ToYeeTypeArray = new string[]
         {
         };
 
         /// <summary>
-        /// YeeTypeInter之规则之邻接矩阵
+        /// Yee规则邻接矩阵
         /// </summary>
         internal string[,] YeeRuleAdjecentMatrix = new string[,]
         {
         };
-
-
-        // internal int SetNumElement()
-        // {
-        //     NumElement = 0;
-        //     return NumElement;
-        // }
-
-
-        // internal int NumElement
-        // {
-        //     get => _numElement;
-        //     set => _numElement = value;
-        // }
-        //
-        // internal Color[] Colors
-        // {
-        //     get => _colors;
-        //     set => _colors = value;
-        // }
-        //
-        // internal string[] YeeTypes
-        // {
-        //     get => _yeeTypes;
-        //     set => _yeeTypes = value;
-        // }
-        //
-        // internal string[] YeeInterTypesInNeighbors
-        // {
-        //     get => _yeeInterTypes;
-        //     set => _yeeInterTypes = value;
-        // }
-        //
-        // internal string[] FromYeeTypeArray
-        // {
-        //     get => _fromYeeTypeArray;
-        //     set => _fromYeeTypeArray = value;
-        // }
-        //
-        // internal string[] ToYeeTypeArray
-        // {
-        //     get => _toYeeTypeArray;
-        //     set => _toYeeTypeArray = value;
-        // }
-        //
-        // internal string[,] YeeRuleAdjecentMatrix
-        // {
-        //     get => _yeeRuleAdjecentMatrix;
-        //     set => _yeeRuleAdjecentMatrix = value;
-        // }
     }
 }

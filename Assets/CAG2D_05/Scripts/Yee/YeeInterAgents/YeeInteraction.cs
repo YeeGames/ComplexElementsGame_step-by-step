@@ -3,21 +3,25 @@ using UnityEngine;
 
 namespace CAG2D_05
 {
-    
     /// <summary>
     /// Yee交互组件
     /// </summary>
     public class YeeInteraction : MonoBehaviour
     {
-        // [SerializeField] internal List<YeeInterAgent> NeighborsOfYeeAgent;
+        /// <summary>
+        /// YeeInterAgent众列表
+        /// </summary>
         [SerializeField] private List<YeeInterAgent> YeeInterAgents = new List<YeeInterAgent>();
-        [HideInInspector] private YeeInterAgent _yeeInterAgent;
+        private YeeInterAgent _yeeInterAgent;
 
-        // [SerializeField] internal YeeAgent thisYeeAgent;
-        // [SerializeField] internal YeeAgent thatYeeAgent;
         [SerializeField] public YeeRule yeeRule;
 
 
+        /// <summary>
+        /// 添加单个YeeInterAgent
+        /// </summary>
+        /// <param name="thisYeeAgent">己方YeeAgent</param>
+        /// <param name="thatYeeAgent">对方YeeAgent</param>
         internal void AddYeeInterAgent(YeeAgent thisYeeAgent, YeeAgent thatYeeAgent)
         {
             this._yeeInterAgent.agentName = thatYeeAgent.name;
@@ -27,6 +31,10 @@ namespace CAG2D_05
             this.YeeInterAgents.Add(this._yeeInterAgent);
         }
 
+        /// <summary>
+        /// 移除单个YeeInterAgent
+        /// </summary>
+        /// <param name="thatYeeAgent">对方YeeAgent</param>
         internal void RemoveYeeInterAgent(YeeAgent thatYeeAgent)
         {
             var idx_thatYeeAgent = this.YeeInterAgents.FindIndex(v => v.agentName == thatYeeAgent.name);
@@ -45,56 +53,41 @@ namespace CAG2D_05
         /// <summary>
         /// 更新各YeeInterAgent之情况
         /// </summary>
-        /// <param name="pos1"></param>
-        /// <param name="pos2"></param>
-        internal void UpdateYeeInteractionStatus(Vector2 pos1, Vector2 pos2)
+        /// <param name="thisPos">己方Agent位置</param>
+        /// <param name="thatPos">对方Agent位置</param>
+        internal void UpdateYeeInteractionStatus(Vector2 thisPos, Vector2 thatPos)
         {
             for (int i = 0; i < this.YeeInterAgents.Count; i++)
             {
                 _yeeInterAgent.agentName = this.YeeInterAgents[i].agentName;
-                _yeeInterAgent.agentPosition = pos2;
+                _yeeInterAgent.agentPosition = thatPos;
                 _yeeInterAgent.yeeInterType = this.YeeInterAgents[i].yeeInterType;
 
                 /// 计算Yee规则圆圈碰撞器范围内的邻居个体之Yee规则力
-                _yeeInterAgent.yeeRuleForce = this.yeeRule.CalcRuleForce(_yeeInterAgent.yeeInterType, pos1, pos2);
+                _yeeInterAgent.yeeRuleForce = this.yeeRule.CalcRuleForce(_yeeInterAgent.yeeInterType, thisPos, thatPos);
 
                 YeeInterAgents[i] = _yeeInterAgent;
             }
         }
-        // /// HACK 方案二
-        // internal void UpdateYeeInteractionStatus()
-        // {
-        //     foreach (var yeeAgent in this.YeeInterAgents)
-        //     {
-        //         /// 计算Yee规则力
-        //         yeeAgent.netRuleForce = yeeAgent.yeeRule.CalcRuleForce(this., this.Position, this.Interaction.thatYeeAgent.Position);
-        //     }
-        // }
 
 
         /// <summary>
-        /// 施加规则力 TODO
+        /// 施加规则力
         /// </summary>
-        /// <param name="ruleNetForce">规则力之合力</param>
-        /// <param name="yeeAgentNeighbors">YeeAgent之邻居Agents</param>
-        public Vector2 ApplyRuleForce()
+        /// <returns>规则力净力</returns>
+        internal Vector2 ApplyRuleForce()
         {
-            Vector2 ruleNetForce = Vector2.zero;
+            Vector2 netRuleForce = Vector2.zero;
             /// 计算所有对方规则力之合力
             if (this.YeeInterAgents.Count != 0)
             {
                 foreach (var yeeInterAgent in this.YeeInterAgents)
                 {
-                    ruleNetForce += yeeInterAgent.yeeRuleForce;
+                    netRuleForce += yeeInterAgent.yeeRuleForce;
                 }
             }
 
-            return ruleNetForce;
+            return netRuleForce;
         }
-
-
-        // protected string thisYeeAgentName;
-        // protected string thisYeeIntertype;
-        // protected Vector2 thisYeeRuleForce;
     }
 }

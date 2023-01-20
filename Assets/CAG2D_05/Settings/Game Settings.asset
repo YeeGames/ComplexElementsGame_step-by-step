@@ -18,5 +18,5 @@ MonoBehaviour:
   stageRadiu: 25
   physicsMaterialsFriction: 0
   physicsMaterialsBounciness: 1
-  yeeFamilyEnum: 1
+  yeeFamilyEnum: 0
   isSettingAtPlayMode: 0

@@ -5,17 +5,59 @@ namespace CAG2D_05
 {
     public class WallManager : MonoBehaviour
     {
+        /// <summary>
+        /// game settings
+        /// </summary>
         public GameSettings gameSettings;
+
+        /// <summary>
+        /// 线渲染组件
+        /// </summary>
         public LineRenderer lineRenderer; //LineRenderer组件
+
+        /// <summary>
+        /// 边碰撞器
+        /// </summary>
         public EdgeCollider2D edgeCollider2D;
+
+        /// <summary>
+        /// 刚体
+        /// </summary>
         public new Rigidbody2D rigidbody2D;
 
-        private PhysicsMaterial2D physicsMaterial2D;
-        Vector3 v; //圆心
-        float boundingWallRadius; //半径
-        int positionCount; //完成一个圆的总点数，
-        float angle; //转角，三个点形成的两段线之间的夹角
-        Quaternion quaternion; //Quaternion四元数
+        /// <summary>
+        /// 物理材质
+        /// </summary>
+        public PhysicsMaterial2D physicsMaterial2D;
+
+        /// <summary>
+        /// 边界墙圆心
+        /// </summary>
+        private Vector3 centerOfCircle;
+
+        /// <summary>
+        /// 边界墙半径
+        /// </summary>
+        private float boundingWallRadius;
+
+        /// <summary>
+        /// 完成一个圆的总点数
+        /// </summary>
+        private int positionCount;
+
+        /// <summary>
+        /// 转角，三个点形成的两段线之间的夹角
+        /// </summary>
+        private float angle;
+
+        /// <summary>
+        /// Quaternion四元数
+        /// </summary>
+        public Quaternion quaternion;
+
+        /// <summary>
+        /// 边界墙宽度
+        /// </summary>
         private float boundingWallWidth;
 
 
@@ -33,7 +75,7 @@ namespace CAG2D_05
 
         void BuildBoundingWall()
         {
-            v = new Vector2(0, 0);
+            centerOfCircle = new Vector2(0, 0);
             boundingWallWidth = gameSettings.stageRadiu * 2;
             boundingWallRadius = gameSettings.stageRadiu + boundingWallWidth / 2;
             positionCount = 360;
@@ -59,7 +101,7 @@ namespace CAG2D_05
 
             DrawCircle();
         }
-        
+
         LineRenderer DrawCircle()
         {
             for (int i = 0; i < positionCount; i++)
@@ -72,7 +114,7 @@ namespace CAG2D_05
                 }
 
                 //Quaternion与Vector3的右乘操作（*）返回一个将原有向量做旋转操作后的新向量.列如：Quaternion.Euler(0, 90, 0) * Vector3(0.0, 0.0, -10) 相当于把向量Vector3(0.0, 0.0, -10)绕y轴旋转90度，得到的结果为Vector3(-10, 0.0.0.0)
-                Vector3 forwardPosition = v + quaternion * Vector3.down * boundingWallRadius;
+                Vector3 forwardPosition = centerOfCircle + quaternion * Vector3.down * boundingWallRadius;
                 lineRenderer.SetPosition(i, forwardPosition);
 
                 // 添加圆形碰撞
