@@ -1,0 +1,32 @@
+using UnityEngine;
+
+namespace CAG_06
+{
+    [System.Serializable]
+    
+    /// <summary>
+    /// Yee 交互个体结构体
+    /// </summary>
+    public struct YeeInterAgent
+    {
+        /// <summary>
+        /// 个体名称
+        /// </summary>
+        public string agentName;
+
+        /// <summary>
+        /// Yee交互类型
+        /// </summary>
+        public string yeeInterType;
+
+        /// <summary>
+        /// 个体位置
+        /// </summary>
+        public Vector2 agentPosition;
+
+        /// <summary>
+        /// Yee规则力
+        /// </summary>
+        public Vector2 yeeRuleForce;
+    }
+}
