@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f14766e9156f1401cbfb147dc4ad1451
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gset: {instanceID: 0}
+  - aget: {instanceID: 0}
+  - rset: {instanceID: 0}
+  - CameraManager: {instanceID: 0}
+  - WallManager: {instanceID: 0}
+  - AgentsManager: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

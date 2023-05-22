@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 805a37bea24924dd99d8dae03c96adb6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gset: {fileID: 11400000, guid: f14b485e6b462468f9e158efeae012f5, type: 2}
+  - lineRenderer: {instanceID: 0}
+  - edgeCollider2D: {instanceID: 0}
+  - rigidbody2D: {instanceID: 0}
+  - physicsMaterial2D: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
