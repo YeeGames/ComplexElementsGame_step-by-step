@@ -1,7 +1,7 @@
 using Unity.Collections;
 using UnityEngine;
 
-namespace CAG_02
+namespace CEG_02
 {
     /// <summary>
     /// Yee个体组件

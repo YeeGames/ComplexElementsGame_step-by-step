@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG_06
+namespace CEG_06
 {
     public class Main : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG_06
+namespace CEG_06
 {
     /// <summary>
     /// Yee 规则 //NOTE 新增

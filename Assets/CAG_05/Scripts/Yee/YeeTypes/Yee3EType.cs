@@ -1,7 +1,7 @@
 using Unity.Collections;
 using UnityEngine;
 
-namespace CAG_05
+namespace CEG_05
 {
     /// <summary>
     /// Yee 3元素类型 //NOTE 新增

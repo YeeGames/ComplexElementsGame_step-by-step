@@ -3,7 +3,7 @@ using Unity.Mathematics;
 using UnityEngine;
 
 
-namespace CAG_05
+namespace CEG_05
 {
     /// <summary>
     /// Yee 3元素规则  //NOTE 新增

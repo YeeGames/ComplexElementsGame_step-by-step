@@ -1,4 +1,4 @@
-namespace CAG_06
+namespace CEG_06
 {
     /// <summary>
     /// Yee 3元素类型枚举

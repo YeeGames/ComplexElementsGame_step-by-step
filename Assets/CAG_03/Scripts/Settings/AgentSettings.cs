@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG_03
+namespace CEG_03
 {
     [CreateAssetMenu]
     public class AgentSettings : ScriptableObject
