@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CAG_06
+namespace CEG_06
 {
     /// <summary>
     /// Yee交互组件

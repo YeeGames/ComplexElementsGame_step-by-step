@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG_06
+namespace CEG_06
 {
     /// <summary>
     /// Yee 2元素类型 //NOTE 新增

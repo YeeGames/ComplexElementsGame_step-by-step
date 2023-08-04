@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-namespace CAG_06
+namespace CEG_06
 {
     /// <summary>
     /// Yee族选取（简单工厂模式） //NOTE 新增

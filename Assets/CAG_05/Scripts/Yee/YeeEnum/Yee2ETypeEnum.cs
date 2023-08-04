@@ -1,4 +1,4 @@
-namespace CAG_05
+namespace CEG_05
 {
     /// <summary>
     /// Yee 2元素类型枚举

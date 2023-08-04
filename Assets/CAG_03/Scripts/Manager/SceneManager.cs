@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-namespace CAG_03
+namespace CEG_03
 {
     public class SceneManager : MonoBehaviour
     {

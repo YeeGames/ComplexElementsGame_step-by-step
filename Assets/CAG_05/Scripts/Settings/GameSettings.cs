@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CAG_05
+namespace CEG_05
 {
     [CreateAssetMenu]
     public class GameSettings : ScriptableObject

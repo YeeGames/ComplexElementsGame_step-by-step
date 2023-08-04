@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CAG_04
+namespace CEG_04
 {
     public class AgentsManager : MonoBehaviour
     {

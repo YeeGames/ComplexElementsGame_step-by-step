@@ -2,7 +2,7 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace CAG_04
+namespace CEG_04
 {
     /// <summary>
     /// Yee 2元素规则 //NOTE 新增

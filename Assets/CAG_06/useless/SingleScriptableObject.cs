@@ -4,7 +4,7 @@
 
 using UnityEngine;
 
-namespace CAG_06.useless
+namespace CEG_06.useless
 {
     public class SingleScriptableObject<T> : ScriptableObject where T : ScriptableObject
     {
