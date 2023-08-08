@@ -43,7 +43,7 @@ namespace CEG_06
 
         private void Awake()
         {
-            /// 载入资源
+            /* 载入资源 */
             var YeeAgent_prefab = Resources.Load("CEG_06/Prefabs/Agent");
             if (YeeAgent_prefab.GetComponent<YeeAgent>() == null)
             {
@@ -52,10 +52,10 @@ namespace CEG_06
             gset = Resources.Load<GameSettings>("CEG_06/Settings/Game Settings");
             yeeAgent = YeeAgent_prefab.GetComponent<YeeAgent>();
 
-            /// 选择YeeType类型 //NOTE 新增
+            /* 选择YeeType类型 //NOTE 新增 */
             yeeType = YeeFamilyChooser.ChooseYeeType(gset.yeeFamilyEnum);
 
-            /// 生成个体众
+            /* 生成个体众 */
             for (var t = 0; t < yeeType.NumElement; t++) // 遍历每一类YeeType，以生成个体
             {
                 for (var i = 0; i < gset.numAgent; i++) // 遍历单类YeeType之所有预定数量，以生成个体

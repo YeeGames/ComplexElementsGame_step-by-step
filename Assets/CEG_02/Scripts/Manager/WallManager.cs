@@ -62,13 +62,13 @@ namespace CEG_02
 
         void Awake()
         {
-            /// 载入资源
+            /* 载入资源 */
             gset = Resources.Load<GameSettings>("CEG_02/Settings/Game Settings");
             lineRenderer = GetComponent<LineRenderer>();
             Material wallMaterial = Resources.Load<Material>("CEG_02/Materials/Wall Material");
             lineRenderer.material = wallMaterial;
 
-            /// 生成外部围墙
+            /* 生成外部围墙 */
             BuildBoundingWall();
         }
 
