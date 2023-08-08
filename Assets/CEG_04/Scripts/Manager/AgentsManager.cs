@@ -43,20 +43,20 @@ namespace CEG_04
 
         private void Awake()
         {
-            /// 载入资源
+            /* 载入资源 */
             var YeeAgent_prefab = Resources.Load("CEG_04/Prefabs/Agent");
             YeeAgent_prefab.AddComponent<YeeAgent>();
             gset = Resources.Load<GameSettings>("CEG_04/Settings/Game Settings");
             yeeAgent = YeeAgent_prefab.GetComponent<YeeAgent>();
 
-            /// 生成个体众
+            /* 生成个体众 */
             for (var t = 0; t < yee2EType.NumElement; t++) // 遍历每一类YeeType，以生成个体  //NOTE 新增
             {
                 for (var i = 0; i < gset.numAgent; i++) // 遍历单类YeeType之所有预定数量，以生成个体
                 {
                     var a = Instantiate(yeeAgent);
 
-                    /// 随机生成在一个圆圈范围内
+                    /* 随机生成在一个圆圈范围内 */
                     Vector2 pos = (Vector2) (this.transform.position) + Random.insideUnitCircle * radiusSize;
 
                     a.aset.position = pos;

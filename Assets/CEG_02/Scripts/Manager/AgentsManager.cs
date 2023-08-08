@@ -43,7 +43,7 @@ namespace CEG_02
 
         private void Awake()
         {
-            /// 载入资源
+            /* 载入资源 */
             var YeeAgent_prefab = Resources.Load("CEG_02/Prefabs/Agent");
             YeeAgent_prefab.AddComponent<YeeAgent>();
             gset = Resources.Load<GameSettings>("CEG_02/Settings/Game Settings");

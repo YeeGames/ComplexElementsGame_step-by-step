@@ -9,10 +9,10 @@ namespace CEG_04
         // Start is called before the first frame update
         void Start()
         {
-            /// 载入资源
+            /* 载入资源 */
             gset = Resources.Load<GameSettings>("CEG_04/Settings/Game Settings");
 
-            /// 设置主摄像机视口大小
+            /* 设置主摄像机视口大小 */
             this.gameObject.GetComponent<Camera>().orthographicSize = gset.stageRadius + 2;
         }
 
